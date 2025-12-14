@@ -1,17 +1,19 @@
+// Player.h
+// Copyright (c) 2025 OptimalTime99. All rights reserved.
+
 #pragma once
 #include <string>
-using namespace std;
 
 class Player {
-public:
-    Player(string nickname);
+ public:
+    explicit Player(std::string nickname);
 
     virtual void attack() = 0;
     void printPlayerStatus() const;
 
     // getter 함수
-    string getJobName();
-    string getNickname();
+    std::string getJobName();
+    std::string getNickname();
     int getLevel();
     int getHP();
     int getMP();
@@ -21,7 +23,7 @@ public:
     int getSpeed();
 
     // setter 함수
-    void setNickname(string nickname);
+    void setNickname(std::string nickname);
     void setHP(int HP);
     void setMP(int MP);
     void setPower(int power);
@@ -29,9 +31,9 @@ public:
     void setAccuracy(int accuracy);
     void setSpeed(int speed);
 
-protected:
-    string job_name;
-    string nickname;
+ protected:
+    std::string job_name;
+    std::string nickname;
     int level;
     int HP;
     int MP;

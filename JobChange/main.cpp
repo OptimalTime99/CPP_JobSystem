@@ -1,28 +1,31 @@
+// main.cpp
+// Copyright (c) 2025 OptimalTime99. All rights reserved.
+
 #include <iostream>
-#include "player.h"
-#include "warrior.h"
-#include "magician.h"
-#include "thief.h"
-#include "archer.h"
-using namespace std;
+#include <string>
+#include "Player.h"
+#include "Warrior.h"
+#include "Magician.h"
+#include "Thief.h"
+#include "Archer.h"
 
 // 메인 함수
 int main() {
-    string jobs[] = { "전사", "마법사", "도적", "궁수" };
+    std::string jobs[] = { "전사", "마법사", "도적", "궁수" };
     int job_choice = 0;
-    string nickname;
+    std::string nickname;
 
     Player* player = nullptr;
 
     std::cout << "* 닉네임을 입력해주세요: ";
     std::cin >> nickname;
 
-    std::cout << "<전직 시스템>" << endl;
-    std::cout << nickname << "님, 환영합니다!" << endl;
-    std::cout << "* 원하시는 직업을 선택해주세요." << endl;
+    std::cout << "<전직 시스템>" << std::endl;
+    std::cout << nickname << "님, 환영합니다!" << std::endl;
+    std::cout << "* 원하시는 직업을 선택해주세요." << std::endl;
 
     for (int i = 0; i < 4; i++) {
-        std::cout << (i + 1) << ". " << jobs[i] << endl;
+        std::cout << (i + 1) << ". " << jobs[i] << std::endl;
     }
 
     std::cout << "선택: ";
@@ -42,7 +45,7 @@ int main() {
         player = new Archer(nickname);
         break;
     default:
-        std::cout << "잘못된 입력입니다." << endl;
+        std::cout << "잘못된 입력입니다." << std::endl;
         return 1;
     }
 
