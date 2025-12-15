@@ -8,6 +8,7 @@
 #include "Magician.h"
 #include "Thief.h"
 #include "Archer.h"
+#include "Monster.h"
 
 // 메인 함수
 int main() {
@@ -16,6 +17,7 @@ int main() {
     std::string nickname;
 
     Player* player = nullptr;
+    Monster* monster = new Monster("슬라임");
 
     std::cout << "* 닉네임을 입력해주세요: ";
     std::cin >> nickname;
@@ -50,10 +52,16 @@ int main() {
     }
 
     player->attack();
+
     player->printPlayerStatus();
+
+    player->attack(monster);
 
     if (player != nullptr)
         delete player;
+
+    if (monster != nullptr)
+        delete monster;
 
     return 0;
 }

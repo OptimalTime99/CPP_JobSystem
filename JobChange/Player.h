@@ -3,12 +3,14 @@
 
 #pragma once
 #include <string>
+class Monster;
 
 class Player {
  public:
     explicit Player(std::string nickname);
 
     virtual void attack() = 0;
+    virtual void attack(Monster* monster) = 0;
     void printPlayerStatus() const;
 
     // getter ÇÔ¼ö

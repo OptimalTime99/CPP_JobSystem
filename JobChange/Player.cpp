@@ -25,7 +25,7 @@ Player::Player(std::string nickname) {
     this->level = 1;
     this->HP = 100;
     this->MP = 50;
-    this->power = 10;
+    this->power = 0;
     this->defence = 0;
     this->accuracy = 1;
     this->speed = 1;
@@ -63,12 +63,15 @@ void Player::setNickname(std::string nickname) {
     this->nickname = nickname;
 }
 void Player::setHP(int HP) {
+    if (HP < 0) HP = 0;
     this->HP = HP;
 }
 void Player::setMP(int MP) {
+    if (MP < 0) MP = 0;
     this->MP = MP;
 }
 void Player::setPower(int power) {
+    if (power < 0) power = 0;
     this->power = power;
 }
 void Player::setDefence(int defence) {

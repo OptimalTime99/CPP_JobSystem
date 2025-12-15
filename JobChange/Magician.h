@@ -7,7 +7,9 @@
 
 class Magician : public Player {
  public:
-     explicit Magician(std::string nickname);
+    explicit Magician(std::string nickname);
 
     void attack() override;
+
+    void attack(Monster* monster) override;
 };

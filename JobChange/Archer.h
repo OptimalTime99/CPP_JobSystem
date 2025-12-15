@@ -10,4 +10,6 @@ class Archer : public Player {
     explicit Archer(std::string nickname);
 
     void attack() override;
+
+    void attack(Monster* monster) override;
 };

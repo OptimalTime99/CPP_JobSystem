@@ -7,7 +7,9 @@
 
 class Thief : public Player {
  public:
-     explicit Thief(std::string nickname);
+    explicit Thief(std::string nickname);
 
     void attack() override;
+
+    void attack(Monster* monster) override;
 };
